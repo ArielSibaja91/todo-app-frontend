@@ -1,1 +1,9 @@
-<p>todoitem works!</p>
+<li class="flex gap-2 items-center">
+    <p>
+        {{todo().title}}
+    </p>
+    <button class="bg-red-500 cursor-pointer px-2 py-1 text-white rounded-3xl" (click)="onDelete()">
+        Delete
+    </button>
+    <input type="checkbox" [checked]="todo().isCompleted" (change)="toggleComplete()" />
+</li>

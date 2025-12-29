@@ -1,0 +1,8 @@
+<div class="flex gap-1">
+    <input type="text" placeholder="Type a new todo" [value]="todoTitle()" (input)="updateTitle($event)"
+        class="w-full px-2 py-1 text-gray-700 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 hover:border-gray-400 transition duration-300 ease" />
+    <button class="bg-green-500 cursor-pointer px-2 py-1 text-white rounded-xl disabled:bg-green-300 duration-150"
+        (click)="onAddTodo()" [disabled]="!todoTitle()">
+        Add
+    </button>
+</div>

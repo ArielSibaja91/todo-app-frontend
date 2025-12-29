@@ -1,1 +1,11 @@
-<p>todolist works!</p>
+<ul class="flex flex-col gap-3">
+    @for (todo of todoService.todos(); track todo.id) {
+        <app-todoitem
+        [todo]="todo"
+        (delete)="onDeleteItem($event)"
+        (toggle)="onToogleItem($event)"
+        />
+    } @empty {
+        <p>There are not pending tasks</p>
+    }
+</ul>

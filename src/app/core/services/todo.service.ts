@@ -37,9 +37,9 @@ export class TodoService {
 
     updateTodo(id: number, todo: Todo) {
         this.http.put<Todo>(`${this.apiUrl}/${id}`, todo).subscribe({
-            next: (updatedTodo) => {
+            next: (response) => {
                 this.#todos.update(list =>
-                    list.map(t => t.id === id ? updatedTodo : t)
+                    list.map(t => t.id === id ? (response || todo) : t)
                 );
             },
             error: (err) => console.error('Error while deleting: ', err)
